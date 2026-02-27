@@ -25,3 +25,11 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+      # Construire l'image Docker
+      - name: Build image
+        run: docker build -t ${{ secrets.USERNAME }}/ma-page-static:v2 .
+
+      # Pousser l'image vers Docker Hub
+      - name: Push image
+        run: docker push ${{ secrets.USERNAME }}/ma-page-static:v2
+ 
