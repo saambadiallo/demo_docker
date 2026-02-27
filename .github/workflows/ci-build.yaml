@@ -1,0 +1,23 @@
+# Workflow pour construire et pousser une image Docker
+name: CI Docker Build
+
+# Déclencheurs du workflow
+on:
+  push:
+    branches:
+      - main
+
+# Définition des tâches
+jobs:
+  # Tâche de construction de l'image Docker
+  build:
+    # Utiliser la dernière version d'Ubuntu
+    runs-on: ubuntu-latest
+
+    # Étapes à exécuter
+    steps:
+      # Récupérer le code du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+ 
